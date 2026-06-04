@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tablas HTML - Ejemplo06</title>
+</head>
+<body>
+  <table border="1">
+  <caption>Horario de Clases - Curso Full Stack</caption>
+  
+  <thead>
+    <tr>
+      <th rowspan="2">Hora</th>
+      <th colspan="5">Días de la semana</th>
+    </tr>
+    <tr>
+      <th scope="col">Lunes</th>
+      <th scope="col">Martes</th>
+      <th scope="col">Miércoles</th>
+      <th scope="col">Jueves</th>
+      <th scope="col">Viernes</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr>
+      <th scope="row">09:00 - 11:00</th>
+      <td>HTML</td>
+      <td>CSS</td>
+      <td>JS</td>
+      <td>React</td>
+      <td>Node</td>
+    </tr>
+    <tr>
+      <th scope="row">11:00 - 13:00</th>
+      <td colspan="5">Prácticas en laboratorio</td>
+    </tr>
+    <tr>
+      <th scope="row">14:00 - 16:00</th>
+      <td>SQL</td>
+      <td>APIs</td>
+      <td>Auth</td>
+      <td>Testing</td>
+      <td>Deploy</td>
+    </tr>
+  </tbody>
+  
+  <tfoot>
+    <tr>
+      <td colspan="6">Total horas semanales: 25 horas</td>
+    </tr>
+  </tfoot>
+</table>
+</body>
+</html>

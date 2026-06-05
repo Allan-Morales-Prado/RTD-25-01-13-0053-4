@@ -1,0 +1,17 @@
+#wrapper{
+  background: darkgray;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  text-align: center;
+}
+
+.text-blue{
+  color: #0037a1;
+}
+
+.text-red{
+  color: #d02a1e;
+}
+
+.text-white{
+  color:white;
+}

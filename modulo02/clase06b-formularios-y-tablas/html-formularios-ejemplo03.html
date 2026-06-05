@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario con validaciones</title>
+</head>
+
+<body>
+  <form action="" method="post">
+
+    <!-- Campo obligatorio -->
+    <label for="nombre">Nombre completo:</label>
+    <input type="text" id="nombre" name="nombre" required>
+
+    <!-- Email con formato válido -->
+    <label for="email">Correo electrónico:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Teléfono con patrón (formato: 9xxxxxxx) -->
+    <label for="telefono">Teléfono (9 números):</label>
+    <input type="tel" id="telefono" name="telefono" pattern="[0-9]{9}" required>
+
+    <!-- Edad con rango numérico -->
+    <label for="edad">Edad (18-99):</label>
+    <input type="number" id="edad" name="edad" min="18" max="99" required>
+
+    <!-- Contraseña con longitud mínima -->
+    <label for="clave">Contraseña (mínimo 8 caracteres):</label>
+    <input type="password" id="clave" name="clave" minlength="8" required>
+
+    <!-- Fecha con rango -->
+    <label for="fecha">Fecha de nacimiento (a partir de 1900):</label>
+    <input type="date" id="fecha" name="fecha" min="1900-01-01" max="2025-12-31">
+
+    <button type="submit">Registrarse</button>
+    <button type="reset">Limpiar</button>
+  </form>
+</body>
+
+</html>

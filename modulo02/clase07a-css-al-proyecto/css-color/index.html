@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colores en CSS</title>
+  <style>
+    /*Estilos para el cuerpo de mi pagina*/
+    body{
+      background-color: #3A435E;
+      color: azure;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    /* Colores */
+    #rojo-nombre{
+      color:red;
+    }
+    #rojo-rgb-hex{
+      color:#ff0000;
+    }
+    #rojo-rgb-0-255{
+      color:rgb(21, 21, 106);
+    }
+    #rojo-rgb-0-100{
+      color:rgb(100%,0%,0%);
+    }
+
+    /* Texto */
+    .negrita{
+      font-weight: 800;
+    }
+
+    .cursiva{
+      font-style: italic;
+    }
+
+    .large{
+      font-size: 48px;
+    }
+
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Colores en CSS</h1>
+    <p>Selección de color por palabra clave: <span id="rojo-nombre" class="negrita">rojo</span></p>
+    <p>Selección de color por RGB hexadecimal: <span id="rojo-rgb-hex">rojo</span></p>
+    <p>Selección de color por RGB (entre 0 y 255): <span id="rojo-rgb-0-255" class="large">rojo</span></p>
+    <p class="cursiva negrita">Selección de color por RGB (entre 0% y 100%): <span id="rojo-rgb-0-100">rojo</span></p>
+  </div>
+</body>
+</html>

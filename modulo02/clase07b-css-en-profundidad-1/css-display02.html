@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Display</title>
+  <style>
+    /* 1. Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      /* ¡Esto es clave! Ver recuadro */
+    }
+
+    /* 2. Estilos de la sección */
+    .charla-section {
+      background-color: #1a1a2e;
+      color: #fff;
+      padding: 100px 0;
+      /* Espacio arriba/abajo */
+      text-align: center;
+      /* Para centrar el título si lo hubiera */
+    }
+
+    /* 3. El contenedor que usa la magia */
+    .contenedor-charla {
+      width: 80%;
+      margin: 0 auto;
+      /* Centra el contenedor horizontalmente */
+      background-color: #16213e;
+      border-radius: 20px;
+      overflow: hidden;
+      /* Para respetar el borde redondeado */
+    }
+
+    /* 4. Haciendo que imagen y texto sean inline-block */
+    .img-charla,
+    .texto-charla {
+      display: inline-block;
+      /* ¡La clave del ejercicio! */
+      vertical-align: middle;
+      /* Centrado vertical */
+    }
+
+    /* 5. Anchos específicos */
+    .img-charla {
+      width: 40%;
+    }
+
+    .texto-charla {
+      width: 59%;
+      /* 40% + 59% = 99%, dejamos 1% para posibles padding/bordes */
+      padding: 20px;
+      text-align: left;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="charla-section">
+    <div class="contenedor-charla">
+      <img class="img-charla" src="https://picsum.photos/id/1/300/200" alt="Computador">
+      <div class="texto-charla">
+        <h2>Próxima Charla: CSS Avanzado</h2>
+        <p>Aprende los secretos del layout moderno. ¡No te lo pierdas!</p>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>

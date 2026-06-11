@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid CSS - Ejemplo 3: Layout con áreas nombradas</title>
+    <link rel="stylesheet" href="./ejemplo3-grid-avanzado.css">
+</head>
+<body>
+    <div class="dashboard">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">✨ GridCSS</div>
+            <div class="nav-links">
+                <a href="#">Inicio</a>
+                <a href="#">Dashboard</a>
+                <a href="#">Analytics</a>
+                <a href="#">Configuración</a>
+            </div>
+            <div>👤 Admin</div>
+        </header>
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h3 style="color:white; margin-bottom:1rem;">📂 Menú</h3>
+            <div class="sidebar-item">📊 Estadísticas</div>
+            <div class="sidebar-item">📦 Productos</div>
+            <div class="sidebar-item">👥 Usuarios</div>
+            <div class="sidebar-item">⚙️ Ajustes</div>
+            <hr>
+            <div class="sidebar-item">🚪 Cerrar sesión</div>
+        </aside>
+
+        <!-- Main content -->
+        <main class="main">
+            <div class="widget">
+                <h3>📈 Ventas Totales</h3>
+                <div class="stat-number">$12,450</div>
+                <p>↑ 23% vs mes anterior</p>
+            </div>
+            <div class="widget">
+                <h3>👥 Usuarios activos</h3>
+                <div class="stat-number">1,284</div>
+                <p>+120 nuevos esta semana</p>
+            </div>
+            <div class="widget">
+                <h3>⭐ Calificación</h3>
+                <div class="stat-number">4.8/5</div>
+                <p>Basado en 342 reseñas</p>
+            </div>
+            <div class="widget">
+                <h3>🕒 Tiempo promedio</h3>
+                <div class="stat-number">8.4 min</div>
+                <p>Duración de sesión</p>
+            </div>
+            <div class="widget">
+                <h3>📱 Conversión</h3>
+                <div class="stat-number">3.2%</div>
+                <p>Objetivo: 4%</p>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <span>© 2025 Grid CSS - Todos los derechos reservados</span>
+            <span>🚀 Layout con grid-template-areas</span>
+        </footer>
+    </div>
+</body>
+</html>

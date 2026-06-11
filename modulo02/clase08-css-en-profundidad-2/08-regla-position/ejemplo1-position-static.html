@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: {postion: static;}</title>
+  <style>
+    .caja {
+      width: 200px;
+      height: 100px;
+      background: lightblue;
+      margin: 10px;
+    }
+
+    .static {
+      position: static;
+      /* Este es el valor por defecto */
+      /* top: 20px;  <- NO FUNCIONA con static */
+    }
+
+    .normal {
+      background: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="caja normal">Caja normal (block)</div>
+  <div class="caja static">Caja con position: static</div>
+  <div class="caja normal">Otra caja normal</div>
+
+  <p>💡 Las tres cajas se apilan verticalmente igual.
+    'static' no cambia nada.</p>
+</body>
+
+</html>

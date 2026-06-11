@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  background: #0f172a;
+  min-height: 100vh;
+  padding: 1.5rem;
+}
+
+/* 🔹 Layout completo usando grid-template-areas */
+.dashboard {
+  display: grid;
+  grid-template-areas:
+    "header header header"
+    "sidebar main main"
+    "sidebar main main"
+    "footer footer footer";
+  grid-template-columns: 260px 1fr 1fr;
+  grid-template-rows: auto 1fr auto 60px;
+  gap: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 95vh;
+}
+
+/* Asignación de áreas */
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  color: white;
+  padding: 1.2rem 2rem;
+  border-radius: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 1.5rem;
+  color: #cbd5e1;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  grid-area: main;
+  background: #0f172a;
+  border-radius: 16px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  align-content: start;
+}
+
+.footer {
+  grid-area: footer;
+  background: #1e293b;
+  color: #94a3b8;
+  padding: 1rem 2rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Estilos internos */
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  background: #3b82f6;
+  padding: 0.3rem 1rem;
+  border-radius: 40px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar-item {
+  padding: 0.75rem 1rem;
+  margin-bottom: 0.5rem;
+  background: #334155;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.sidebar-item:hover {
+  background: #3b82f6;
+  color: white;
+}
+
+.widget {
+  background: #1e293b;
+  border-radius: 16px;
+  padding: 1.2rem;
+  color: white;
+  border-left: 4px solid #3b82f6;
+}
+
+.widget h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #3b82f6;
+}
+
+hr {
+  margin: 1rem 0;
+  border-color: #334155;
+}
+
+@media (max-width: 768px) {
+  .dashboard {
+    grid-template-areas:
+      "header"
+      "sidebar"
+      "main"
+      "footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto 1fr auto;
+  }
+
+  body {
+    padding: 0.5rem;
+  }
+}

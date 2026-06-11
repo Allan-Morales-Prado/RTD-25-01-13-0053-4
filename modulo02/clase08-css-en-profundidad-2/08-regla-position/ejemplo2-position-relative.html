@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: {postion: relative;}</title>
+  <style>
+    body {
+      font-family: Arial;
+      padding: 20px;
+    }
+
+    .contenedor {
+      background: #f0f0f0;
+      padding: 10px;
+      border: 2px solid #ccc;
+    }
+
+    .caja {
+      width: 200px;
+      height: 80px;
+      background: #3498db;
+      color: white;
+      text-align: center;
+      line-height: 80px;
+      margin: 10px;
+    }
+
+    /* La caja relativa se mueve PERO deja su hueco */
+    .relativa {
+      position: relative;
+      top: 30px;
+      /* Baja 30px desde su posición original */
+      left: 40px;
+      /* Se mueve 40px a la derecha */
+      background: #e74c3c;
+    }
+
+    .info {
+      background: #ecf0f1;
+      padding: 10px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>📐 position: relative</h1>
+
+  <div class="contenedor">
+    <div class="caja">Caja 1 (normal)</div>
+    <div class="caja relativa">Caja 2: relative<br>top:30px; left:40px</div>
+    <div class="caja">Caja 3 (normal)</div>
+  </div>
+
+  <div class="info">
+    <strong>🔍 Observa:</strong>
+    <ul>
+      <li>La caja roja se movió 30px hacia ABAJO y 40px hacia la DERECHA</li>
+      <li>✅ El espacio DONDE DEBERÍA ESTAR la caja roja permanece VACÍO (se respeta)</li>
+      <li>✅ Las otras cajas NO se movieron (siguen donde estaban)</li>
+      <li>⚠️ La caja roja se superpone a la caja 3 porque se movió sobre ella</li>
+    </ul>
+  </div>
+</body>
+
+</html>

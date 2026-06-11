@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: {postion: fixed;}</title>
+  <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 20px;
+        }
+        
+        .contenedor {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* Elemento sticky - se pega al hacer scroll */
+        .encabezado-seccion {
+            position: sticky;
+            top: 10px;          /* Se pega cuando llega a 10px del borde superior */
+            background: #3498db;
+            color: white;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 8px;
+            font-weight: bold;
+        }
+        
+        /* Elemento sticky diferente */
+        .sidebar-sticky {
+            position: sticky;
+            top: 20px;
+            background: #e74c3c;
+            color: white;
+            padding: 20px;
+            width: 200px;
+            float: right;
+            margin-left: 20px;
+            border-radius: 8px;
+        }
+        
+        .contenido-largo {
+            background: #ecf0f1;
+            padding: 15px;
+            margin: 10px 0;
+            line-height: 1.6;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        
+        hr {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+  <div class="contenedor">
+        <h1>📌 position: sticky</h1>
+        
+        <!-- Sidebar sticky (flota a la derecha) -->
+        <div class="sidebar-sticky">
+            🟢 ¡SOY STICKY!<br>
+            Me pego cuando haces scroll<br>
+            📍 top: 20px
+        </div>
+        
+        <p>El elemento <strong>sticky</strong> se comporta como <strong>relative</strong> normalmente, pero cuando el scroll alcanza su posición, se "pega" y se comporta como <strong>fixed</strong> DENTRO de su contenedor.</p>
+        
+        <!-- Primer sticky header -->
+        <div class="encabezado-seccion">
+            📌 SECCIÓN 1 - Este encabezado se pegará al hacer scroll
+        </div>
+        
+        <div class="contenido-largo">
+            <p>Contenido extenso de la sección 1. Haz scroll para ver el efecto sticky.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+            <p>Cuando este encabezado llegue al borde superior (top:10px), se pegará hasta que termine su sección contenedora.</p>
+        </div>
+        
+        <!-- Segundo sticky header -->
+        <div class="encabezado-seccion">
+            📌 SECCIÓN 2 - Otro encabezado sticky
+        </div>
+        
+        <div class="contenido-largo">
+            <p>Más contenido aquí. Observa cómo el encabezado anterior desaparece cuando sale de su contenedor y este nuevo encabezado toma su lugar pegajoso.</p>
+            <p>Continua scroleando para ver el comportamiento del sidebar sticky a la derecha.</p>
+        </div>
+        
+        <!-- Tercer sticky header -->
+        <div class="encabezado-seccion">
+            📌 SECCIÓN 3 - Último sticky
+        </div>
+        
+        <div class="contenido-largo">
+            <p>Y más contenido para terminar. Los elementos sticky son ideales para:</p>
+            <ul>
+                <li>✅ Encabezados de sección en listas largas</li>
+                <li>✅ Tablas con cabeceras fijas</li>
+                <li>✅ Barras laterales que acompañan al scroll</li>
+                <li>✅ Menús contextuales</li>
+            </ul>
+        </div>
+        
+        <hr>
+        
+        <div class="card">
+            <strong>🔍 Diferencia clave sticky vs fixed:</strong>
+            <ul>
+                <li><strong>fixed:</strong> Se queda fijo SIEMPRE, en toda la página</li>
+                <li><strong>sticky:</strong> Se queda fijo SOLO dentro de su contenedor, y luego "sale" cuando el contenedor termina</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

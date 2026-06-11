@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS: {postion: absolute;}</title>
+  <style>
+        .contenedor-relative {
+            position: relative;  /* ← ANCESTRO POSICIONADO */
+            background: #e8e8e8;
+            padding: 30px;
+            margin: 20px;
+            min-height: 300px;
+            border: 2px dashed #999;
+        }
+        
+        .caja {
+            width: 150px;
+            height: 80px;
+            background: #2ecc71;
+            margin: 10px;
+            text-align: center;
+            line-height: 80px;
+            display: inline-block;
+        }
+        
+        .absoluta {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e67e22;
+            width: 120px;
+            height: 60px;
+            line-height: 60px;
+        }
+        
+        .absoluta-2 {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: #9b59b6;
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            font-size: 12px;
+        }
+        
+        .destacado {
+            background: #f1c40f;
+            border: 2px solid #000;
+        }
+    </style>
+</head>
+<body>
+   <h1>🎯 position: absolute</h1>
+    
+    <div class="contenedor-relative">
+        <p><strong>Este contenedor tiene position: relative</strong> (ancestro posicionado)</p>
+        
+        <div class="caja">Caja A</div>
+        <div class="caja">Caja B</div>
+        <div class="caja">Caja C</div>
+        
+        <div class="absoluta">
+            ¡Soy ABSOLUTA!<br>
+            top:20px; right:20px
+        </div>
+        
+        <div class="absoluta-2">
+            ¡Otra absoluta!<br>
+            bottom:10px; left:10px
+        </div>
+    </div>
+    
+    <div class="info" style="background:#ecf0f1; padding:15px; margin-top:20px;">
+        <strong>🔍 Observaciones importantes:</strong>
+        <ul>
+            <li>❌ Las cajas A, B, C IGNORAN por completo a las cajas absolutas (como si no existieran)</li>
+            <li>✅ Las cajas absolutas se posicionan respecto al contenedor GRIS (que tiene position: relative)</li>
+            <li>✅ Si no hubiera un ancestro posicionado, se posicionarían respecto al &lt;body&gt;</li>
+            <li>💡 Las cajas absolutas se superponen sobre los demás elementos</li>
+        </ul>
+    </div>
+</body>
+</html>

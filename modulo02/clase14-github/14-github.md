@@ -98,20 +98,16 @@ git stash pop
 
 ### Uso recomendado
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                                                             │
-│   ¿Cuándo usar git stash?                                  │
-│                                                             │
-│   ✓ Cuando necesitas resolver un problema urgente         │
-│   ✓ Cuando te interrumpen mientras trabajas               │
-│   ✓ Cuando no quieres hacer un commit incompleto          │
-│                                                             │
-│   ✗ No como reemplazo de commits                          │
-│   ✗ No para guardar cambios por largos períodos           │
-│                                                             │
-└─────────────────────────────────────────────────────────────┘
-```
+> ## 📦 ¿Cuándo usar `git stash`?
+> 
+> ### ✅ Cuándo SÍ usar:
+> - Resolver un problema urgente
+> - Te interrumpen mientras trabajas
+> - No quieres hacer un commit incompleto
+> 
+> ### ❌ Cuándo NO usar:
+> - No como reemplazo de commits
+> - No para guardar cambios por largos períodos
 
 > **Recomendación:** Usar `git stash` en casos puntuales donde necesites de forma urgente solucionar problemas detectados mientras trabajas en una nueva versión.
 
@@ -130,17 +126,31 @@ git rebase
 ```
 
 **Antes del rebase:**
-```
-main ──●─────────●──
-         \       /
-feature ──●──●──●──
+```mermaid
+gitGraph
+    commit id: "Initial commit" tag: "v1.0"
+    branch feature/nueva-funcionalidad
+    checkout feature/nueva-funcionalidad
+    commit id: "Añadir lógica básica"
+    commit id: "Implementar tests"
+    checkout main
+    commit id: "Corregir bug critical"
+    commit id: "Actualizar docs"
+    checkout feature/nueva-funcionalidad
+    commit id: "Mejorar UI"
+    checkout main
+    merge feature/nueva-funcionalidad tag: "v2.0"
 ```
 
 **Después del rebase:**
-```
-main ──●──●──●──●──●──
-                      ↑
-                 (historial más limpio)
+```mermaid
+gitGraph
+    commit id: "Initial commit" tag: "v1.0"
+    commit id: "Corregir bug critical"
+    commit id: "Actualizar docs"
+    commit id: "Añadir lógica básica"
+    commit id: "Implementar tests"
+    commit id: "Mejorar UI" tag: "v2.0"
 ```
 
 ### Beneficios de `git rebase`
@@ -243,40 +253,28 @@ https://username.github.io/nombre-repositorio/
 ### ¿Qué es un Pull Request?
 
 Un **Pull Request** es una acción disponible en GitHub que permite a un desarrollador solicitar la revisión y aprobación de sus cambios.
-
+```mermaid
+sequenceDiagram
+    participant D as Desarrollador
+    participant R as Repositorio
+    participant M as Mantenedor
+    
+    D->>R: Crear Rama (feature)
+    D->>R: Solicitar Pull Request
+    R->>M: Notificar PR
+    M->>R: Aprobar y Fusionar (merge)
+    R-->>D: PR fusionado
 ```
-┌─────────────┐    ┌─────────────┐    ┌─────────────┐
-│  Crear      │    │  Solicitar  │    │  Aprobar y  │
-│  Rama       │ -> │  Pull       │ -> │  Fusionar   │
-│  (feature)  │    │  Request    │    │  (merge)    │
-└─────────────┘    └─────────────┘    └─────────────┘
-```
-
 ### Flujo de trabajo con Pull Request
 
-```
-                    ┌──────────────────────┐
-                    │                      │
-                    │   Repositorio        │
-                    │   Principal          │
-                    │   (main)             │
-                    │                      │
-                    └──────────┬───────────┘
-                               │
-                    ┌──────────▼───────────┐
-                    │                      │
-                    │   Pull Request       │
-                    │   (solicitud de      │
-                    │   revisión)          │
-                    │                      │
-                    └──────────┬───────────┘
-                               │
-                    ┌──────────▼───────────┐
-                    │                      │
-                    │   Rama Feature       │
-                    │   (cambios nuevos)   │
-                    │                      │
-                    └──────────────────────┘
+```mermaid
+graph LR
+    C[Rama Feature<br/>cambios nuevos] -->|push| B[Pull Request<br/>solicitud de revisión]
+    B -->|merge| A[Repositorio Principal<br/>main]
+    
+    style A fill:#e3f2fd,stroke:#1565c0,color:#1a1a1a,font-weight:bold
+    style B fill:#f3e5f5,stroke:#6a1b9a,color:#1a1a1a,font-weight:bold
+    style C fill:#e8f5e9,stroke:#2e7d32,color:#1a1a1a,font-weight:bold
 ```
 
 ### Instrucciones para la práctica
@@ -333,9 +331,3 @@ En esta unidad hemos aprendido:
 - Resguardar nuestro progreso
 - Hacer pruebas de concepto sin impactar el código principal
 - Trabajar en equipos con responsabilidades diversas
-
----
-
-## Próximo Paso
-
-Revisar material de estudio asincrónico que consiste en un **desafío** para practicar los conceptos aprendidos en esta sesión.

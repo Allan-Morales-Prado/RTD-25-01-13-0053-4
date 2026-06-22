@@ -1,13 +1,52 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>jQuery | CDN</title>
   <!-- Inserta el script de jQuery sobre los demás scripts que tengas en el head -->
-  <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+    integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    /* reglas de estilo: el contenido (texto) no es seleccionable */
+    p {
+      -webkit-touch-callout: none;
+      /* iOS Safari */
+      -webkit-user-select: none;
+      /* Safari */
+      -khtml-user-select: none;
+      /* Konqueror HTML */
+      -moz-user-select: none;
+      /* Old versions of Firefox */
+      -ms-user-select: none;
+      /* Internet Explorer/Edge */
+      user-select: none;
+      /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+    }
+  </style>
 </head>
+
 <body>
-  
+  <!-- Todos los elementos HTML primero que mostremos al usuario -->
+  <p>Si me clickeas dos veces, desapareceré.</p>
+  <p>¡Yo también!</p>
+  <p>¡Yo también!</p>
+
+  <!-- .valor -->
+  <ul>
+    <li class="vacaciones">
+      <h2>La Serena, Chile</h2>
+      <span class="valor">$120.000</span>
+    </li>
+  </ul>
+
+  <!-- SCRIPTS -->
+  <script src="./assets/js/scripts.js"></script>
 </body>
+
 </html>

@@ -1,2 +1,0 @@
-Texto de plantilla de ejemplo para mostrar los efectos del git stash
-trabajo trerminado

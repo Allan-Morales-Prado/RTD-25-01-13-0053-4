@@ -286,7 +286,8 @@ get_continent()
 
 Para modificar una variable global dentro de una función, se usa la palabra clave `global`.
 
-> ⚠️ **Precaución**: Esta práctica es **poco recomendada** y puede generar errores difíciles de depurar.
+>[!WARNING]
+>Esta práctica es **poco recomendada** y puede generar errores difíciles de depurar.
 
 ```python
 contador = 0  # Variable global
@@ -366,7 +367,47 @@ def sacar_numero(posicion):
     print(f'El {posicion} es {elegido}')
 ```
 
-### Paso 7: Ejecutar el programa
+### Paso 7: Implementar la lógica completa
+```mermaid
+flowchart TD
+    A[Inicio: pool = 1..41] --> B[i = 1]
+    B --> C{i <= 6?}
+    
+    C -->|Sí| D[Elegir número al azar de pool]
+    D --> E[Remover número del pool]
+    E --> F[Mostrar: El i° número sorteado es...]
+    F --> G[i = i + 1]
+    G --> C
+    
+    C -->|No| H[Elegir comodín al azar de pool]
+    H --> I[Remover comodín del pool]
+    I --> J[Mostrar: El comodín es...]
+    J --> K[Fin]
+```
+
+```python
+import random
+pool = [n for n in range(1, 42)]
+
+def sacar_numero(posicion):
+  global pool
+  elegido = random.choice(pool)
+  pool.remove(elegido)
+  print(f"El {posicion}° número sorteado es: {elegido}")
+
+for i in range(1, 7):
+  sacar_numero(i)
+
+elegido = random.choice(pool)
+pool.remove(elegido)
+print(f"El comodín es: {elegido}")
+```
+
+>[!TIP]
+>Este ejercicio puede resolverse sin la necesidad de crear funciones
+>¿Tú como lo resolverías de esta manera?
+
+### Paso 8: Ejecutar el programa
 
 Al ejecutar, se observan los números extraídos y cómo el pool disminuye en cada iteración.
 

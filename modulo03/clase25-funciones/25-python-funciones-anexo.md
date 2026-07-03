@@ -83,7 +83,7 @@ A por la analogía:
 | Estadística (Matemáticas)  | Lenguaje Python  |
 |---|---|
 | $$2, 3, 1, 8, 6$$  | `[2, 3, 1, 8, 6]` |
-| $$\bar{x}$$  | `sum(2, 3, 1, 8, 6) / len([2, 3, 1, 8, 6])` |
+| $$\bar{x}$$  | `sum([2, 3, 1, 8, 6]) / len([2, 3, 1, 8, 6])` |
 | $$s$$  | `math.sqrt(sum([(i - m)**2 for i in x]) / (len(x) - 1))` |
 | $$\frac{v - \bar{x}}{s} = \left[ \frac{x_1 - \bar{x}}{s}, \frac{x_2 - \bar{x}}{s}, \dots, \frac{x_n - \bar{x}}{s} \right]$$  | <code># si x = [2, 3, 1, 8, 6]</code><br><code># 'm' la media</code><br><code># y 's' la desviación estándar</code><br><code>v = [(i - m) / s for i in x]</code> |
 

@@ -270,44 +270,7 @@ Imagina que Python es un **parque público**:
 - **Comunidad activa**: Millones de personas colaboran, reportan errores y crean soluciones
 - **Futuro asegurado**: No desaparecerá porque una empresa decida cerrarlo
 
----
-
-## Resumen Visual
-
-```mermaid
-graph TD
-    A[Python] --> B[Características]
-    
-    B --> C[Libre Distribución]
-    B --> D[Interpretado]
-    B --> E[Dinámicamente Tipado]
-    B --> F[Multiplataforma]
-    B --> G[Multiparadigma]
-    
-    C --> C1[Sin costos]
-    C --> C2[Código abierto]
-    C --> C3[Contribución comunitaria]
-    
-    D --> D1[Ejecución línea por línea]
-    D --> D2[Desarrollo ágil]
-    D --> D3[Depuración inmediata]
-    
-    E --> E1[Variables flexibles]
-    E --> E2[Menos declaraciones]
-    E --> E3[Mayor velocidad de desarrollo]
-    
-    F --> F1[Funciona en cualquier SO]
-    F --> F2[Despliegue universal]
-    F --> F3[Código portátil]
-    
-    G --> G1[Imperativo]
-    G --> G2[Orientado a objetos]
-    G --> G3[Funcional]
-```
-
----
-
-## Ejercicio Práctico para Trainees 🎯
+## Ejercicio Práctico
 
 Abre tu terminal de Python y prueba estas ideas:
 
@@ -343,9 +306,3 @@ Python no es solo un lenguaje más; es una **herramienta diseñada para humanos*
 4. **Resolver problemas reales** de forma elegante
 
 Como trainee, estás aprendiendo en el lenguaje que más empresas están usando hoy en día. Y estas características son precisamente las que lo han convertido en el favorito de la industria.
-
-**¿Tienes dudas sobre algún punto?** ¡Pregunta en clase! Recuerda: en programación, la única pregunta tonta es la que no se hace. 💪
-
----
-
-*¡Sigue así, futuro Pythonista! 🐍*

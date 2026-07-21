@@ -15,6 +15,15 @@ En programación orientada a objetos, se busca:
 - **Abstraer** la lógica de los métodos de una clase, dejando expuesto solamente los nombres de los métodos y sus parámetros.
 - **Encapsular** el estado de los objetos, ocultando sus atributos.
 
+>[!TIP]
+>**Sobre la abstracción**
+>Recuerden la *analogía del punto de vista y necesidades* de dos personas diferentes sobre un objeto o algo tratado como tal entre un veterinario y el dueño de una mascota:
+> - ¿Cuánto sabe cada uno sobre ese animal?
+> - ¿Qué información es relevante o **necesaria** para cada individuo?
+
+>[!IMPORTANT]
+>Recordar que en Python los atributos y métodos son **públicos** y lo que se hace en realidad con la notación de nombres de atributos y métodos (prefijos `__` y `_`) además de el uso de los decoradores `@property` y `@property.setter` es forzar el encapsulamiento.
+
 ---
 
 ## Abstracción
@@ -124,6 +133,23 @@ Python permite acceder a atributos privados usando la sintaxis:
 p = PelotaDeJuguete("amarilla")
 print(p._PelotaDeJuguete__color)  # Salida: amarilla
 ```
+
+**¿Por qué?**
+Al definir un atributo con la notación de interfaces de acceso (privado/protegido), Python automáticamente cambia su nombre internamente para evitar conflictos de *herencia*.
+
+En el ejemplo, cuando se define `self.__atributo`, Python <ins>internamente</ins    > lo nombra `_Clase__atributo`. 
+
+>[!TIP]
+>Ejecuta `python -i <ruta_archivo.py>`, luego ejecuta `dir(p)` para observar el nombramiento interno del atributo.
+
+>[!CAUTION]
+>***Se puede, PERO NO SE DEBE***
+>Acceder a los atributos privados fuera de esa interfaz de acceso **ROMPE EL ENCAPSULAMIENTO:**
+>```python
+>p._PelotaDeJuguete__color ## Ud, NO LO HAGA
+>p.__color ## Debería devolver un error
+>p.color ## Forma correcta (si se implementa bien)
+>```
 
 ---
 

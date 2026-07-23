@@ -4,7 +4,7 @@ class PelotaDeDeporte():
 class PelotaDePlastico():
     tipo = "Plástico"
 
-class PelotaDePingPong(PelotaDeDeporte, PelotaDePlastico):
+class PelotaDePingPong(PelotaDePlastico, PelotaDeDeporte):
     pass
 
 # Salida: "Deporte" (primera clase heredada)

@@ -282,7 +282,7 @@ Vehículo de color Verde
 <details>
 <summary><strong>Ver respuesta</strong></summary>
 
-**Respuesta correcta: D**
+**Respuesta correcta: B**
 
 **Justificación:** 
 - Coche: Sobrescribe `describir()` → "Coche con 4 puertas"

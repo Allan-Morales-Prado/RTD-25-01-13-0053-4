@@ -1,0 +1,7 @@
+A) Persona es una clase concreta que puede ser instanciada directamente
+
+B) obtener_informacion() es un método abstracto que Estudiante y Profesor deben implementar
+
+C) obtener_informacion() es un método que las clases hijas pueden opcionalmente sobrescribir
+
+D) La relación entre Curso y Estudiante es de composición

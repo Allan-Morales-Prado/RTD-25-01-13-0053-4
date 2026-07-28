@@ -95,18 +95,32 @@ def procesar_datos(valor):
 
 procesar_datos("5")
 ```
+A)
+```
+División por cero
+Procesamiento finalizado
+```
 
-A) División por cero
-    Procesamiento finalizado
+B)
+```
+TypeError
+Procesamiento finalizado
+```
 
-B) TypeError
-    Procesamiento finalizado
+C)
+```
+Tipo de dato incorrecto
+Procesamiento finalizado
+```
 
-C) Tipo de dato incorrecto
-    Procesamiento finalizado
+D)
+```
+Error general
+Procesamiento finalizado
+```
 
-D) Error general
-    Procesamiento finalizado
+
+
 
 <details>
 <summary><strong>Ver respuesta correcta</strong></summary>
@@ -158,20 +172,28 @@ except ValueError:
 finally:
     print("Bloque final ejecutado")
 ```
-
-A) Índice fuera de rango
-    Bloque final ejecutado
-    (Termina con ValueError)
-
-B) Índice fuera de rango
-    Error de valor capturado
-    Bloque final ejecutado
-
-C) Índice fuera de rango
-    Bloque final ejecutado
-
-D) Error de valor capturado
-    Bloque final ejecutado
+A)
+```
+Índice fuera de rango
+Bloque final ejecutado
+(Termina con ValueError)
+```
+B)
+```
+Índice fuera de rango
+Error de valor capturado
+Bloque final ejecutado
+```
+C)
+```
+Índice fuera de rango
+Bloque final ejecutado
+```
+D)
+```
+Error de valor capturado
+Bloque final ejecutado
+```
 
 <details>
 <summary><strong>Ver respuesta correcta</strong></summary>

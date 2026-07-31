@@ -1,0 +1,11 @@
+{"nombre": "Laptop Pro X1", "precio": 1499}
+{"nombre": "Mouse Inalámbrico MX3", "precio": }
+
+{"nombre": "", "precio": 57}
+{"nombre": "Teclado Mecánico RGB", "precio": 89}
+{"nombre": "Auriculares Bluetooth", "precio": 79}
+{"nombre": "Disco SSD 1TB", "precio": 129}
+{"nombre": "Memoria RAM 16GB", "precio": 89}
+{"nombre": "Tarjeta Gráfica RTX", "precio": 799}
+{"nombre": "Fuente de Poder 750W", "precio": 149}
+{"nombre": "Gabinete Gamer RGB", "precio": 109}

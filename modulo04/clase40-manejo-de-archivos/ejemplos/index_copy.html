@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentación de open() en Python - Traducción</title>
+</head>
+<body>
+
+<h1>Documentación de la función <code>open()</code> en Python</h1>
+
+<h2>Traducción al español</h2>
+
+<pre>
+(función) def open(
+    file: FileDescriptorOrPath,
+    mode: OpenTextMode = "r",
+    buffering: int = -1,
+    encoding: str | None = None,
+    errors: str | None = None,
+    newline: str | None = None,
+    closefd: bool = True,
+    opener: _Opener | None = None
+) -> TextIOWrapper[_WrappedBuffer]
+</pre>
+
+<p><strong>Abre un archivo y devuelve un flujo de datos (stream). Lanza OSError en caso de fallo.</strong></p>
+
+<p><strong>file</strong> es una cadena de texto o de bytes que proporciona el nombre (y la ruta si el archivo no está en el directorio de trabajo actual) del archivo a abrir, o un descriptor de archivo entero del archivo a envolver. (Si se proporciona un descriptor de archivo, se cierra cuando el objeto E/S devuelto se cierra, a menos que closefd se establezca como False).</p>
+
+<p><strong>mode</strong> es una cadena opcional que especifica el modo en el que se abre el archivo. Su valor predeterminado es <code>'r'</code> que significa abrir para lectura en modo texto. Otros valores comunes son <code>'w'</code> para escritura (truncando el archivo si ya existe), <code>'x'</code> para crear y escribir en un archivo nuevo, y <code>'a'</code> para añadir (que en algunos sistemas Unix, significa que todas las escrituras se añaden al final del archivo independientemente de la posición actual del puntero). En modo texto, si no se especifica encoding, la codificación utilizada depende de la plataforma: se llama a <code>locale.getencoding()</code> para obtener la codificación regional actual. (Para leer y escribir bytes sin procesar, use el modo binario y no especifique encoding). Los modos disponibles son:</p>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Carácter</th>
+        <th>Significado</th>
+    </tr>
+    <tr>
+        <td><code>'r'</code></td>
+        <td>Abrir para lectura (predeterminado)</td>
+    </tr>
+    <tr>
+        <td><code>'w'</code></td>
+        <td>Abrir para escritura, truncando el archivo primero</td>
+    </tr>
+    <tr>
+        <td><code>'x'</code></td>
+        <td>Crear un nuevo archivo y abrirlo para escritura</td>
+    </tr>
+    <tr>
+        <td><code>'a'</code></td>
+        <td>Abrir para escritura, añadiendo al final del archivo si existe</td>
+    </tr>
+    <tr>
+        <td><code>'b'</code></td>
+        <td>Modo binario</td>
+    </tr>
+    <tr>
+        <td><code>'t'</code></td>
+        <td>Modo texto (predeterminado)</td>
+    </tr>
+    <tr>
+        <td><code>'+'</code></td>
+        <td>Abrir un archivo en disco para actualización (lectura y escritura)</td>
+    </tr>
+</table>
+
+<p>El modo predeterminado es <code>'rt'</code> (abrir para lectura de texto). Para acceso aleatorio binario, el modo <code>'w+b'</code> abre y trunca el archivo a 0 bytes, mientras que <code>'r+b'</code> abre el archivo sin truncamiento. El modo <code>'x'</code> implica <code>'w'</code> y lanza un <code>FileExistsError</code> si el archivo ya existe.</p>
+
+<p>Python distingue entre archivos abiertos en modo binario y de texto, incluso cuando el sistema operativo subyacente no lo hace. Los archivos abiertos en modo binario (añadiendo <code>'b'</code> al argumento mode) devuelven el contenido como objetos bytes sin decodificación. En modo texto (el predeterminado, o cuando se añade <code>'t'</code> al argumento mode), el contenido del archivo se devuelve como cadenas (strings), habiendo sido decodificados primero los bytes usando una codificación dependiente de la plataforma o usando la codificación especificada si se proporciona.</p>
+
+<p><strong>buffering</strong> es un entero opcional que se utiliza para establecer la política de almacenamiento en búfer. Pase 0 para desactivar el almacenamiento en búfer (solo permitido en modo binario), 1 para seleccionar almacenamiento en búfer por líneas (solo usable en modo texto), y un entero &gt; 1 para indicar el tamaño de un búfer de bloques de tamaño fijo. Cuando no se proporciona el argumento buffering, la política de almacenamiento en búfer predeterminada funciona de la siguiente manera:</p>
+
+<ul>
+    <li>Los archivos binarios se almacenan en búfer en bloques de tamaño fijo; el tamaño del búfer es <code>max(min(tamaño_bloque, 8 MiB), DEFAULT_BUFFER_SIZE)</code> cuando el tamaño del bloque del dispositivo está disponible.</li>
+    <li>En la mayoría de los sistemas, el búfer típicamente será de 128 kilobytes de longitud.</li>
+    <li>Los archivos de texto "interactivos" (archivos para los cuales <code>isatty()</code> devuelve True) usan almacenamiento en búfer por líneas. Otros archivos de texto usan la política descrita anteriormente para archivos binarios.</li>
+</ul>
+
+<p><strong>encoding</strong> es el nombre de la codificación utilizada para decodificar o codificar el archivo. Esto solo debe usarse en modo texto. La codificación predeterminada depende de la plataforma, pero se puede pasar cualquier codificación soportada por Python. Consulte el módulo <code>codecs</code> para la lista de codificaciones soportadas.</p>
+
+<p><strong>errors</strong> es una cadena opcional que especifica cómo deben manejarse los errores de codificación; este argumento no debe usarse en modo binario. Pase <code>'strict'</code> para lanzar una excepción <code>ValueError</code> si hay un error de codificación (el valor predeterminado <code>None</code> tiene el mismo efecto), o pase <code>'ignore'</code> para ignorar los errores. (Tenga en cuenta que ignorar errores de codificación puede llevar a pérdida de datos). Consulte la documentación de <code>codecs.register</code> o ejecute <code>help(codecs.Codec)</code> para obtener una lista de las cadenas de error de codificación permitidas.</p>
+
+<p><strong>newline</strong> controla cómo funcionan los saltos de línea universales (solo aplica al modo texto). Puede ser <code>None</code>, <code>''</code>, <code>'\n'</code>, <code>'\r'</code> y <code>'\r\n'</code>. Funciona de la siguiente manera:</p>
+
+<ul>
+    <li><strong>En entrada</strong>, si newline es <code>None</code>, el modo de saltos de línea universales está habilitado. Las líneas en la entrada pueden terminar en <code>'\n'</code>, <code>'\r'</code> o <code>'\r\n'</code>, y estas se traducen a <code>'\n'</code> antes de ser devueltas al llamador. Si es <code>''</code>, el modo de saltos de línea universales está habilitado, pero los finales de línea se devuelven al llamador sin traducir. Si tiene cualquiera de los otros valores legales, las líneas de entrada solo terminan con la cadena dada, y el final de línea se devuelve al llamador sin traducir.</li>
+    <li><strong>En salida</strong>, si newline es <code>None</code>, cualquier carácter <code>'\n'</code> escrito se traduce al separador de línea predeterminado del sistema, <code>os.linesep</code>. Si newline es <code>''</code> o <code>'\n'</code>, no se realiza ninguna traducción. Si newline es cualquiera de los otros valores legales, cualquier carácter <code>'\n'</code> escrito se traduce a la cadena dada.</li>
+</ul>
+
+<p>Si <strong>closefd</strong> es <code>False</code>, el descriptor de archivo subyacente se mantendrá abierto cuando el archivo se cierre. Esto no funciona cuando se proporciona un nombre de archivo y debe ser <code>True</code> en ese caso.</p>
+
+<p>Se puede usar un <strong>opener</strong> personalizado pasando un objeto invocable como opener. El descriptor de archivo subyacente para el objeto archivo se obtiene llamando a opener con <code>(file, flags)</code>. opener debe devolver un descriptor de archivo abierto (pasar <code>os.open</code> como opener resulta en una funcionalidad similar a pasar <code>None</code>).</p>
+
+<p><code>open()</code> devuelve un objeto archivo cuyo tipo depende del modo, y a través del cual se realizan las operaciones estándar de archivo como lectura y escritura. Cuando <code>open()</code> se usa para abrir un archivo en modo texto (<code>'w'</code>, <code>'r'</code>, <code>'wt'</code>, <code>'rt'</code>, etc.), devuelve un <code>TextIOWrapper</code>. Cuando se usa para abrir un archivo en modo binario, la clase devuelta varía: en modo de lectura binaria, devuelve un <code>BufferedReader</code>; en modos de escritura binaria y adición binaria, devuelve un <code>BufferedWriter</code>, y en modo de lectura/escritura, devuelve un <code>BufferedRandom</code>.</p>
+
+<p>También es posible usar una cadena (string) o <code>bytearray</code> como un archivo tanto para lectura como para escritura. Para strings, <code>StringIO</code> puede usarse como un archivo abierto en modo texto, y para bytes, <code>BytesIO</code> puede usarse como un archivo abierto en modo binario.</p>
+
+<hr>
+
+<h2>Resumen de los modos más importantes</h2>
+
+<table border="1" cellpadding="5">
+    <tr>
+        <th>Modo</th>
+        <th>Descripción</th>
+    </tr>
+    <tr>
+        <td><code>'r'</code></td>
+        <td>Lectura (predeterminado)</td>
+    </tr>
+    <tr>
+        <td><code>'w'</code></td>
+        <td>Escritura, truncando el archivo primero</td>
+    </tr>
+    <tr>
+        <td><code>'x'</code></td>
+        <td>Crear nuevo archivo y abrirlo para escritura (lanza <code>FileExistsError</code> si existe)</td>
+    </tr>
+    <tr>
+        <td><code>'a'</code></td>
+        <td>Escritura, añadiendo al final del archivo si existe</td>
+    </tr>
+    <tr>
+        <td><code>'b'</code></td>
+        <td>Modo binario</td>
+    </tr>
+    <tr>
+        <td><code>'t'</code></td>
+        <td>Modo texto (predeterminado)</td>
+    </tr>
+    <tr>
+        <td><code>'+'</code></td>
+        <td>Actualización (lectura y escritura)</td>
+    </tr>
+</table>
+
+<h3>Combinaciones comunes:</h3>
+<ul>
+    <li><code>'rb'</code>: Lectura binaria</li>
+    <li><code>'wb'</code>: Escritura binaria (trunca)</li>
+    <li><code>'ab'</code>: Adición binaria</li>
+    <li><code>'r+b'</code>: Lectura/escritura binaria (sin truncar)</li>
+    <li><code>'w+b'</code>: Lectura/escritura binaria (trunca)</li>
+    <li><code>'a+b'</code>: Lectura/escritura binaria (añade al final)</li>
+</ul>
+
+<h2>Valores predeterminados importantes</h2>
+
+<ul>
+    <li><strong>Modo predeterminado:</strong> <code>'rt'</code> (lectura de texto)</li>
+    <li><strong>Encoding predeterminado:</strong> Depende de la plataforma (<code>locale.getencoding()</code>)</li>
+    <li><strong>Buffering predeterminado:</strong>
+        <ul>
+            <li>Binario: bloques de tamaño fijo (~128 KB típicamente)</li>
+            <li>Texto interactivo (terminal): por líneas</li>
+            <li>Otros textos: igual que binario</li>
+        </ul>
+    </li>
+    <li><strong>Errors:</strong> <code>None</code> (equivalente a <code>'strict'</code>)</li>
+</ul>
+
+</body>
+</html>

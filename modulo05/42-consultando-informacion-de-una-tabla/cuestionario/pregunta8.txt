@@ -1,0 +1,22 @@
+A)
+SELECT departamento, AVG(salario) 
+FROM empleados 
+GROUP BY departamento 
+ORDER BY AVG(salario) DESC;
+
+B)
+SELECT departamento, AVG(salario) 
+FROM empleados 
+ORDER BY AVG(salario) DESC 
+GROUP BY departamento;
+
+C)
+SELECT departamento, AVG(salario) 
+FROM empleados 
+GROUP BY salario 
+ORDER BY departamento DESC;
+
+D)
+SELECT AVG(salario), departamento 
+FROM empleados 
+ORDER BY AVG(salario) ASC;

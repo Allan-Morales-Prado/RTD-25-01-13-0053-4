@@ -1,0 +1,8 @@
+C)
+SELECT producto, cantidad * precio_unitario AS total
+FROM ventas
+WHERE cantidad * precio_unitario > 3000;
+
+D)
+SELECT producto, cantidad * precio_unitario > 3000 AS total
+FROM ventas;

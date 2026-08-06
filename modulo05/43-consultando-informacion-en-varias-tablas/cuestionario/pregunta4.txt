@@ -1,0 +1,6 @@
+¿Qué afirmación es correcta respecto a este modelo?
+
+A) Un empleado puede pertenecer a varios departamentos.
+B) Un departamento puede tener varios empleados.
+C) El campo gerente_id es clave primaria en la tabla DEPARTAMENTO.
+D) No existe relación entre EMPLEADO y DEPARTAMENTO.

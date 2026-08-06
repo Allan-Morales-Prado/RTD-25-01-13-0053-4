@@ -1,0 +1,6 @@
+¿Qué relación existe entre USUARIO y PRESTAMO?
+
+A) Un usuario puede tener muchos préstamos.
+B) Un préstamo puede ser solicitado por muchos usuarios.
+C) Un usuario solo puede tener un préstamo.
+D) No existe relación entre usuario y préstamo.

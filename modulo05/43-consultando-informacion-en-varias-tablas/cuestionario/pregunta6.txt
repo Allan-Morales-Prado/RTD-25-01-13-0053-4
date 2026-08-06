@@ -1,0 +1,4 @@
+A) Laptop 3, Mouse 5, Teclado 0
+B) Laptop 3, Mouse 5
+C) Laptop 2, Mouse 5, Teclado 0
+D) Laptop 3, Mouse 5, Teclado NULL

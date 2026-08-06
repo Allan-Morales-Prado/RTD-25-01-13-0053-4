@@ -1,0 +1,10 @@
+¿Qué devuelve la siguiente consulta?
+
+SELECT empleados.nombre, departamentos.nombre_dep
+FROM empleados
+LEFT JOIN departamentos ON empleados.id = departamentos.empleado_id;
+
+A) Carlos - Ventas, Elena - IT
+B) Carlos - Ventas, Elena - IT, Mario - NULL
+C) Carlos - Ventas, Elena - IT, Mario - (sin fila)
+D) Carlos - Ventas, Elena - IT, Mario - NULL, NULL - NULL

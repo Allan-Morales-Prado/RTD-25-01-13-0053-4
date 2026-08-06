@@ -1,0 +1,5 @@
+Dado el siguiente diagrama (ver diagrama) ¿Cuál tabla contiene la clave foranea?
+A) CLIENTE
+B) FACTURA
+C) PAGO
+D) Todas las anteriores

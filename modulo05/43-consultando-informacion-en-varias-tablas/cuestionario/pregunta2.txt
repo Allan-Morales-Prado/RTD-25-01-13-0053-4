@@ -1,0 +1,14 @@
+¿Cuál es el resultado de la siguiente consulta?
+
+SELECT nombre
+FROM clientes
+WHERE cliente_id IN (
+  SELECT cliente_id
+  FROM pedidos
+  WHERE monto > 1000
+);
+
+A) Ana, Luis
+B) Ana, Carla
+C) Luis, Carla
+D) Ana, Luis, Carla

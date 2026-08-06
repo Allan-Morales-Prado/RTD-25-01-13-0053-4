@@ -1,0 +1,6 @@
+¿Cuál de las siguientes afirmaciones es FALSA?
+
+A) Un cliente puede realizar varios pedidos.
+B) Un pedido puede contener varios detalles.
+C) Un producto puede estar en varios detalles.
+D) Un detalle puede pertenecer a varios pedidos.

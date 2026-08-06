@@ -1,0 +1,19 @@
+A)
+SELECT nombre, curso
+FROM estudiantes
+LEFT JOIN cursos ON estudiantes.id = cursos.estudiante_id;
+
+B)
+SELECT nombre, curso
+FROM estudiantes
+INNER JOIN cursos ON estudiantes.id = cursos.estudiante_id;
+
+C)
+SELECT nombre, curso
+FROM estudiantes
+RIGHT JOIN cursos ON estudiantes.id = cursos.estudiante_id;
+
+D)
+SELECT nombre, curso
+FROM estudiantes
+FULL OUTER JOIN cursos ON estudiantes.id = cursos.estudiante_id;

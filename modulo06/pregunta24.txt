@@ -1,0 +1,23 @@
+B)
+from django.http import HttpResponse
+from django.views import View
+
+class DerechosReservados(View):
+    def dispatch(self, request):
+        return HttpResponse('© 2026, www.misitio.cl')
+
+C)
+from django.http import HttpResponse
+from django.views import View
+
+class DerechosReservados(View):
+    def get(self, request):
+        return HttpResponse('© 2026, www.misitio.cl')
+
+D)
+from django.http import HttpResponse
+from django.views import View
+
+class DerechosReservados(View):
+    def render(self, request):
+        return HttpResponse('© 2026, www.misitio.cl')

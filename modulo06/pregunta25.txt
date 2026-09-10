@@ -1,0 +1,18 @@
+from django.http import HttpResponse
+
+def derechos_reservados(request):
+    return HttpResponse('© 2026, www.misitio.cl')
+
+C)
+# Para FBV
+path('derechos/', views.derechos_reservados, name='derechos')
+
+# Para CBV
+path('derechos/', views.DerechosReservados.as_view(), name='derechos')
+
+D)
+# Para FBV
+path('derechos/', views.derechos_reservados)
+
+# Para CBV
+path('derechos/', views.DerechosReservados.as_view())

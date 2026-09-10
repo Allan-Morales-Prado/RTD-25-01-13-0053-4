@@ -1,0 +1,25 @@
+Template perfil.html:
+
+<h2>Usuario: {{ usuario }}</h2>
+<p>Rol: {{ rol }}</p>
+<p>Permisos: {{ permisos|join:", " }}</p>
+
+A)
+Usuario: ADMIN
+Rol: usuario
+Permisos: 
+
+B)
+Usuario: admin
+Rol: admin
+Permisos: admin
+
+C)
+Usuario: ADMIN
+Rol: admin
+Permisos: ['crear', 'editar', 'eliminar']
+
+D)
+Usuario: ADMIN
+Rol: admin
+Permisos: crear, editar, eliminar

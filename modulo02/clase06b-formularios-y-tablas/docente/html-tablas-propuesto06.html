@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>Factura de Compra</title>
+</head>
+<body>
+    <h1>Factura Electrónica</h1>
+    
+    <table>
+        <caption>FACTURA N° 001-1234567</caption>
+        
+        <!-- Encabezado principal de la factura -->
+        <thead>
+            <tr>
+                <td colspan="2">
+                    <strong>Vendedor:</strong> TechStore S.A.<br>
+                    <strong>RUT:</strong> 76.123.456-7<br>
+                    <strong>Dirección:</strong> Av. Providencia 1234, Santiago
+                </td>
+                <td colspan="2">
+                    <strong>Fecha de emisión:</strong> 17 de marzo de 2025<br>
+                    <strong>RUT Cliente:</strong> 12.345.678-9<br>
+                    <strong>Nombre Cliente:</strong> Ana María González
+                 </td>
+            </tr>
+            
+            <!-- Encabezados de columnas -->
+            <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Precio Unitario</th>
+                <th scope="col">Subtotal</th>
+            </tr>
+        </thead>
+        
+        <!-- Cuerpo de la factura (productos) -->
+        <tbody>
+            <tr>
+                <th scope="row">001</th>
+                <td>Laptop HP 15"</td>
+                <td>1</td>
+                <td>$450.000</td>
+                <td>$450.000</td>
+            </tr>
+            <tr>
+                <th scope="row">002</th>
+                <td>Mouse Inalámbrico</td>
+                <td>2</td>
+                <td>$15.000</td>
+                <td>$30.000</td>
+            </tr>
+            <tr>
+                <th scope="row">003</th>
+                <td>Teclado Mecánico</td>
+                <td>1</td>
+                <td>$45.000</td>
+                <td>$45.000</td>
+            </tr>
+            <tr>
+                <th scope="row">004</th>
+                <td>Auriculares Bluetooth</td>
+                <td>1</td>
+                <td>$35.000</td>
+                <td>$35.000</td>
+            </tr>
+        </tbody>
+        
+        <!-- Pie de factura (totales) -->
+        <tfoot>
+            <tr>
+                <td colspan="4"><strong>Subtotal</strong></td>
+                <td><strong>$560.000</strong></td>
+            </tr>
+            <tr>
+                <td colspan="4"><strong>IVA (19%)</strong></td>
+                <td><strong>$106.400</strong></td>
+            </tr>
+            <tr style="border-top: 2px solid black;">
+                <td colspan="4"><strong>TOTAL A PAGAR</strong></td>
+                <td><strong>$666.400</strong></td>
+            </tr>
+            
+            <!-- Forma de pago -->
+            <tr>
+                <td colspan="5">
+                    <strong>Forma de pago:</strong> Transferencia bancaria<br>
+                    <strong>Plazo:</strong> 30 días<br>
+                    <strong>Boleta N°:</strong> 123456789
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+    
+    <p><em>Esta factura es un documento oficial válido para efectos tributarios.</em></p>
+</body>
+</html>

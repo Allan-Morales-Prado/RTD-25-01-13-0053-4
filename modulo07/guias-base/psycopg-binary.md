@@ -10,7 +10,7 @@ La siguiente es una plantilla SQL para la creación de bases de datos PostgreSQL
 
 -- DROP DATABASE IF EXISTS nombre_base_de_datos;
 
-CREATE DATABASE nombre_base_de_datos
+CREATE DATABASE sep24_db
     WITH
     OWNER = postgres
     ENCODING = 'UTF8'
@@ -25,6 +25,7 @@ CREATE DATABASE nombre_base_de_datos
 La siguiente es una lista de nombres de bases de datos configuradas para los proyectos de este módulo:
 
 - sep10_p1db
+- sep10_p2db
 
 Asegúrate de crear archivos de entorno para cada proyecto si vas a probar su funcionamiento incluyendo la conexión con PostgreSQL:
 

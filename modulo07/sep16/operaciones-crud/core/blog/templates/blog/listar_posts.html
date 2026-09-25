@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}| Blogs{% endblock title %}
+
+{% block content %}
+{% if posts %}
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Título</th>
+      <th scope="col">Contenido</th>
+      <th scope="col">Fecha de Creación</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for post in posts %}
+    <tr>
+      <td>{{ post.titulo }}</td>
+      <td>{{ post.contenido }}</td>
+      <td>{{ post.fecha_de_publicacion }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% else %}
+<div class="text-center"><p>No post yet :&lpar;</p></div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,12 @@
+<!-- modificar_edad.html -->
+{% extends "base.html" %}
+{% block title %}| Modificar Edad{% endblock title %}
+{% block content %}
+<h1>Modificar Edad para {{ usuario.username }}</h1>
+    <form method="post" action="{% url 'modificar_edad' usuario.username %}">
+        {% csrf_token %}
+        <label for="nueva_edad">Nueva Edad:</label>
+        <input type="text" name="nueva_edad" required>
+        <input type="submit" value="Guardar">
+    </form>
+{% endblock content %}
